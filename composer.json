@@ -1,0 +1,43 @@
+{
+    "name": "basecode/basecode",
+
+    "version": "1.0.0",
+
+    "type": "project",
+
+    "license": "proprietary",
+
+    "bin": [
+
+        "basecode"
+    ],
+
+    "require": {
+
+        "php": "^8.0.2",
+
+        "symfony/console": "^6.0.16"
+    },
+
+    "require-dev": {
+
+        "symfony/dotenv": "^6.0.5",
+        "phpunit/phpunit": "^9.5.25"
+    },
+
+    "autoload": {
+
+        "psr-4": {
+
+            "Src\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+
+        "psr-4": {
+
+            "Tests\\": "tests/"
+        }
+    }
+}

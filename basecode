@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+
+<?php
+
+require_once __DIR__."/vendor/autoload.php";
+
+use Src\Version;
+use Src\Console\Commands\VersionCommand;
+use Src\Console\Commands\CommunicationCommand;
+use Symfony\Component\Dotenv\Dotenv;
+use Symfony\Component\Console\Application;
+
+if (file_exists ($env = __DIR__."/.env")) (new Dotenv())->load($env);
+
+$application = new Application();
+
+$application->setName($_ENV["APP_NAME"] ?? "Command Line Tool");
+$application->setVersion((new Version)());
+
+$application->add(new VersionCommand());
+$application->add(new CommunicationCommand());
+
+$application->run();
